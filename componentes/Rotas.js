@@ -9,12 +9,19 @@ const Navegacao = () => {
 
     let [ fontesCarregadas, erroFonte ] = useFonts({ McLaren_400Regular });
     
-    if ( !fontesCarregadas && !erroFonte ) { return {}; }
+    if ( !fontesCarregadas && !erroFonte ) { return null; }
     else {
 
         return (
 
-            <Stack.Navigator initialRouteName="Home" screenOptions={{ headerMode: "float", headerTintColor: "#000000", headerStyle: { backgroundColor: "#ffffff", borderWidth: 10, borderColor: "#000000"},  headerTitleAlign: "center", headerTitleStyle: { fontFamily: "McLaren_400Regular" } }}>
+            <Stack.Navigator initialRouteName="Home" 
+                             screenOptions={{ headerMode: "float", 
+                                              headerTintColor: "#D80000", 
+                                              headerTitleAlign: "center", 
+                                              headerStyle: { backgroundColor: "#262626", 
+                                                             borderWidth: 10, 
+                                                             borderColor: "#000000" }, 
+                                              headerTitleStyle: { fontFamily: "McLaren_400Regular" } }}>
 
                 <Stack.Screen name="Bem-vindo à Fórmula 1" component={Home}></Stack.Screen>      
                 <Stack.Screen name="Pilotos" component={Pilotos}></Stack.Screen>

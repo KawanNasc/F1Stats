@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Text, SafeAreaView, FlatList } from 'react-native';
+import { Text, Image, SafeAreaView, FlatList, ScrollView } from 'react-native';
 import { estilizar } from '../componentes/EstilosGerais';
 
 const api = async(callback) => {
@@ -19,25 +19,30 @@ const Pilotos = () => {
     useEffect(() => { api(setRegistros); },[] )
 
     return (
+        <ScrollView>
 
-        <SafeAreaView>
+            <SafeAreaView style={ estilos.body }>
 
-            <Text style={ estilos.titulo }> Confira os pilotos da temporada atual </Text>
+                <Text style={ estilos.titulo }> Confira os pilotos da temporada atual </Text>
 
-            <FlatList data={registros}  renderItem={ ( {item} ) => 
+                <Image source={ require('../assets/imgs/grid.png') } style={ estilos.header } />
 
-                <SafeAreaView style={ estilos.lista } >
+                <FlatList data={registros}  renderItem={ ( {item} ) => 
 
-                    <Text style={ estilos.descricao }> Nome: {item.givenName} {item.familyName} {'\n'}  </Text> 
-                    <Text style={ estilos.descricao }> N°: {item.permanentNumber} {'\n'} </Text> 
-                    <Text style={ estilos.descricao }> Nacionalidade: {item.nationality} {'\n'} </Text> 
-                    <Text style={ estilos.descricao }> Biografia: {item.url} {'\n'}  </Text>
+                    <SafeAreaView style={ estilos.lista } >
 
-                </SafeAreaView>
+                        <Text style={ estilos.descricao }> Nome: {item.givenName} {item.familyName} N°: {item.permanentNumber} </Text> 
+                        <Text style={ estilos.descricao }> Nacionalidade: {item.nationality} </Text> 
+                        <Text style={ estilos.descricao }> Biografia: {'\n'} {item.url} </Text>
 
-            } />
+                    </SafeAreaView>
 
-        </SafeAreaView>
+                } />
+
+            </SafeAreaView>
+
+        </ScrollView>
+
 
     );
 }

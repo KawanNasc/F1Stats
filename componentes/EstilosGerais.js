@@ -11,15 +11,17 @@ export const estilizar = () => {
 
         return StyleSheet.create({
 
-            body: { flex: 1 }, 
+            body: { flex: 1, backgroundColor: "#000000", padding: 10, textAlign: "center", justifyContent: "center", alignItems: "center" }, 
 
-            titulo: { fontFamily: "RibeyeMarrow_400Regular" },
+            titulo: { fontFamily: "RibeyeMarrow_400Regular", backgroundColor: "#262626", color: "#D80000", borderRadius: 30, padding: 5, fontSize: 15, margin: 15},
 
-            img: { },
+            header: { width: 350, height: 100, margin: 15, alignSelf: "center", borderRadius: 50 },
 
-            descricao: { fontFamily: "Fredoka_600SemiBold" },
-            
-            itens: { }
+            img: { width: 200, height: 200, margin: 8, alignSelf: "center", borderRadius: 30 },
+
+            lista: { padding: 50, margin: 5  },
+
+            descricao: { fontFamily: "Fredoka_600SemiBold", backgroundColor: "#262626", color: "#D80000", padding: 15, textAlign: "center" },
 
         });
 
