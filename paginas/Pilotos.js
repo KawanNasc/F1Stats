@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Text, Image, SafeAreaView, FlatList, ScrollView } from 'react-native';
+import { Text, Image, SafeAreaView, FlatList } from 'react-native';
 import { estilizar } from '../componentes/EstilosGerais';
 
 const api = async(callback) => {
@@ -19,7 +19,6 @@ const Pilotos = () => {
     useEffect(() => { api(setRegistros); },[] )
 
     return (
-        <ScrollView>
 
             <SafeAreaView style={ estilos.body }>
 
@@ -40,9 +39,6 @@ const Pilotos = () => {
                 } />
 
             </SafeAreaView>
-
-        </ScrollView>
-
 
     );
 }
